@@ -1,0 +1,47 @@
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("Enter value of n :");
+    scanf("%d",&n);
+    int a[n];
+    int temp=0;
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d", & a[i]);
+    }
+    for(int i=0;i<n-1;i++)
+    {
+        for(int j=0;j<n-1;j++)
+        {
+            if(a[j]>a[j+1])
+            {
+                temp=a[j];
+                a[j]=a[j+1];
+                a[j+1]=temp;
+            }
+        }
+    }
+    printf("Sorted Array :");
+    for(int i=0;i<n;i++)
+    {
+        printf("%d ", a[i]);
+    }
+    printf("\n");
+    float median=0;
+
+        if(n%2!=0)
+        {
+            int oind=n/2;
+           median=a[oind];
+        }
+        else
+        {
+            int eind=n/2;
+            int x=a[eind];
+            int y=a[eind-1];
+            median=(x+y)/2;
+        }
+    printf(" %f ", median);
+    return 0;
+}
